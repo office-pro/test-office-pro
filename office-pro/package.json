@@ -1,21 +1,18 @@
 {
   "name": "office-pro",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "node index.js",
+    "start": "http-server dist/",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "preinstall": "npm install -g http-server",
-    "postinstall": "bower install && grunt build",
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-    "heroku-postbuild": "echo This runs afterwards."
+    "heroku-prebuild": "npm install -g http-server",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
-  "cacheDirectories": ["node_modules", "bower_components", "public/build" ],
   "dependencies": {
     "@angular/common": "~2.1.2",
     "@angular/compiler": "~2.1.2",
@@ -49,8 +46,8 @@
     "zone.js": "^0.6.23"
   },
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.9.2",
+    "npm": "3.10.9"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.2.3",
@@ -74,5 +71,4 @@
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
   }
-  
 }
